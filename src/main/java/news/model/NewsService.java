@@ -18,18 +18,21 @@ public class NewsService {
 
 	
 	
-	public NewsVO addNews(String newsId, String newsTitle, String newsCategoryId, String adminId, String newsContent, Timestamp newsStartDate,
-			Timestamp newsEndDate, Timestamp createdTime, Integer newsStatusId, String newsImg ) throws SQLException {
+	public NewsVO addNews(String newsTitle, String newsCategoryId, String adminId, String newsContent, Timestamp newsStartDate,
+			Timestamp newsEndDate, Integer newsStatusId, byte[] newsImg ) throws SQLException {
 
 		NewsVO newsVO = new NewsVO();
 
+		Timestamp currentTime = new Timestamp(System.currentTimeMillis()); 
+		
+		
 		newsVO.setNewsId(newsDao.getNextNewsId());
 		newsVO.setNewsTitle(newsTitle);
 		newsVO.setNewsContent(newsContent);
 		newsVO.setNewsStartDate(newsStartDate);
 		newsVO.setNewsEndDate(newsEndDate);
 		newsVO.setNewsImg(newsImg);
-		newsVO.setCreatedTime(createdTime);
+		newsVO.setCreatedTime(currentTime);
 		newsVO.setNewsCategoryId(newsCategoryId);
 		newsVO.setAdminId(adminId);
 		newsVO.setNewsStatusId(newsStatusId);
@@ -40,21 +43,25 @@ public class NewsService {
 	}
 
 	public NewsVO updateNews(String newsId, String newsTitle, String newsCategoryId, String adminId, String newsContent, Timestamp newsStartDate,
-			Timestamp newsEndDate, Timestamp createdTime, Integer newsStatusId, String newsImg) {
+			Timestamp newsEndDate, Integer newsStatusId, byte[] newsImg) {
 
 		NewsVO newsVO = new NewsVO();
 
+		Timestamp currentTime = new Timestamp(System.currentTimeMillis()); 
+		
 		newsVO.setNewsId(newsId);
 		newsVO.setNewsTitle(newsTitle);
 		newsVO.setNewsContent(newsContent);
 		newsVO.setNewsStartDate(newsStartDate);
 		newsVO.setNewsEndDate(newsEndDate);
 		newsVO.setNewsImg(newsImg);
-		newsVO.setCreatedTime(createdTime);
+		newsVO.setCreatedTime(currentTime);
 		newsVO.setNewsCategoryId(newsCategoryId);
 		newsVO.setAdminId(adminId);
 		newsVO.setNewsStatusId(newsStatusId);
 
+		newsDao.update(newsVO);
+		
 		return newsVO;
 	}
 
@@ -69,4 +76,13 @@ public class NewsService {
 	public List<NewsVO> getAll() {
 		return newsDao.getAll();
 	}
+	
+
+    public List<NewsVO> getNewsByPage(String title, Integer categoryId, Integer statusId, int page, int recordsPerPage) {
+        return newsDao.getNewsByPage(title, categoryId, statusId, page, recordsPerPage);
+    }
+
+    public int getNewsCount(String title, Integer categoryId, Integer statusId) {
+        return newsDao.getNewsCount(title, categoryId, statusId);
+    }
 }

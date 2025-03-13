@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="news.NewsService" %>
-<%@ page import="news.NewsVO" %>
+<%@ page import="news.model.NewsService" %>
+<%@ page import="news.model.NewsVO" %>
 <%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
@@ -113,7 +113,7 @@
         <div class="row gx-5">
           <div class="container mt-5">
             <h2>新增最新消息</h2>
-            <form action="<%=request.getContextPath()%>/news/uploadNewsServlet2.do" method="post" enctype="multipart/form-data">
+            <form action="<%=request.getContextPath()%>/news/controller/uploadNewsServlet2.do" method="post" enctype="multipart/form-data">
               <input type="hidden" name="newsId" ">
               <div class="mb-3">
                 <label for="newsTitle" class="form-label">消息標題</label>

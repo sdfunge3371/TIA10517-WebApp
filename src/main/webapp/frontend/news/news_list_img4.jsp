@@ -2,9 +2,9 @@
 
 
 
-<%@ page import="news.NewsService"%>
+<%@ page import="news.model.NewsService"%>
 
-<%@ page import="news.NewsVO"%>
+<%@ page import="news.model.NewsVO"%>
 
 <%@ page import="java.util.List"%>
 

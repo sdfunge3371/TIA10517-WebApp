@@ -80,7 +80,7 @@ public class NewsJDBCDAO implements NewsDAO_interface{
 			pstmt.setString(3, newsVO.getNewsContent());
 			pstmt.setTimestamp(4, newsVO.getNewsStartDate());
 			pstmt.setTimestamp(5, newsVO.getNewsEndDate());
-			pstmt.setString(6, newsVO.getNewsImg());
+			pstmt.setBytes(6, newsVO.getNewsImg());
 			pstmt.setTimestamp(7, newsVO.getCreatedTime());
 			pstmt.setString(8, newsVO.getNewsCategoryId());
 			pstmt.setString(9, newsVO.getAdminId());
@@ -136,7 +136,7 @@ public class NewsJDBCDAO implements NewsDAO_interface{
 			pstmt.setString(2, newsVO.getNewsContent());
 			pstmt.setTimestamp(3, newsVO.getNewsStartDate());
 			pstmt.setTimestamp(4, newsVO.getNewsEndDate());
-			pstmt.setString(5, newsVO.getNewsImg());
+			pstmt.setBytes(5, newsVO.getNewsImg());
 			pstmt.setTimestamp(6, newsVO.getCreatedTime());
 			pstmt.setString(7, newsVO.getNewsCategoryId());
 			pstmt.setString(8, newsVO.getAdminId());
@@ -245,7 +245,7 @@ public class NewsJDBCDAO implements NewsDAO_interface{
 				newsVO.setNewsContent(rs.getString("news_content"));
 				newsVO.setNewsStartDate(rs.getTimestamp("news_start_date"));
 				newsVO.setNewsEndDate(rs.getTimestamp("news_end_date"));
-				newsVO.setNewsImg(rs.getString("news_img"));
+				newsVO.setNewsImg(rs.getBytes("news_img"));
 				newsVO.setCreatedTime(rs.getTimestamp("created_time"));
 				newsVO.setNewsCategoryId(rs.getString("news_category_id_fk"));
 				newsVO.setAdminId(rs.getString("admin_id_fk"));
@@ -314,7 +314,7 @@ public class NewsJDBCDAO implements NewsDAO_interface{
 				newsVO.setNewsContent(rs.getString("news_content"));
 				newsVO.setNewsStartDate(rs.getTimestamp("news_start_date"));
 				newsVO.setNewsEndDate(rs.getTimestamp("news_end_date"));
-				newsVO.setNewsImg(rs.getString("news_img"));
+				newsVO.setNewsImg(rs.getBytes("news_img"));
 				newsVO.setCreatedTime(rs.getTimestamp("created_time"));
 				newsVO.setNewsCategoryId(rs.getString("news_category_id_fk"));
 				newsVO.setAdminId(rs.getString("admin_id_fk"));
@@ -433,6 +433,21 @@ public class NewsJDBCDAO implements NewsDAO_interface{
 //			System.out.println();
 //		}
 		
+	}
+
+
+	@Override
+	public List<NewsVO> getNewsByPage(String title, Integer categoryId, Integer statusId, int page,
+			int recordsPerPage) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public int getNewsCount(String title, Integer categoryId, Integer statusId) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 

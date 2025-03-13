@@ -3,7 +3,7 @@
 	xmlns="https://jakarta.ee/xml/ns/jakartaee"
 	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
 	id="WebApp_ID" version="6.0">
-	<display-name>TIA105G3</display-name>
+	<display-name>TIA10517-WebApp</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
@@ -25,7 +25,7 @@
 	
 	<servlet>
     <servlet-name>NewsServlet</servlet-name>
-    <servlet-class>news.NewsServlet</servlet-class>
+    <servlet-class>news.controller.NewsServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
     <servlet-name>NewsServlet</servlet-name>
@@ -34,20 +34,20 @@
 	
 	<servlet>
     <servlet-name>NewsServlet_img</servlet-name>
-    <servlet-class>news.NewsServlet_img</servlet-class>
+    <servlet-class>news.controller.NewsServlet_img</servlet-class>
 	</servlet>
 	<servlet-mapping>
     <servlet-name>NewsServlet_img</servlet-name>
-    <url-pattern>/news/uploadNewsServlet2.do</url-pattern>
+    <url-pattern>/news/controller/uploadNewsServlet2.do</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
     <servlet-name>PhotoReader</servlet-name>
-    <servlet-class>news.PhotoReader</servlet-class>
+    <servlet-class>news.controller.PhotoReader</servlet-class>
 	</servlet>
 	<servlet-mapping>
     <servlet-name>PhotoReader</servlet-name>
-    <url-pattern>/news/PhotoReader2</url-pattern>
+    <url-pattern>/news/controller/PhotoReader2</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

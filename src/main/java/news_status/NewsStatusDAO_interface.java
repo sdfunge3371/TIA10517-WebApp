@@ -2,7 +2,7 @@ package news_status;
 
 import java.util.List;
 
-import news.NewsVO;
+import news.model.NewsVO;
 
 public interface NewsStatusDAO_interface {
 

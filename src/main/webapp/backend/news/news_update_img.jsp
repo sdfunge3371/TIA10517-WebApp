@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="news.NewsService" %>
-<%@ page import="news.NewsVO" %>
+<%@ page import="news.model.NewsService" %>
+<%@ page import="news.model.NewsVO" %>
 <%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
@@ -144,7 +144,7 @@
         <div class="row gx-5">
           <div class="container mt-5">
             <h2>修改最新消息</h2>
-            <form action="<%=request.getContextPath()%>/news/uploadNewsServlet2.do" method="post" enctype="multipart/form-data">
+            <form action="<%=request.getContextPath()%>/news/controller/uploadNewsServlet2.do" method="post" enctype="multipart/form-data">
               <input type="hidden" name="newsId" value="<%=newsVO.getNewsId()%>">
               <div class="mb-3">
                 <label for="newsTitle" class="form-label">消息標題</label>
@@ -185,7 +185,7 @@
               <div class="mb-3">
                <label for="newsImg" class="form-label">消息圖片</label>
             <%-- 資料庫有圖片，顯示目前圖片 --%>
-            <img src="${pageContext.request.contextPath}/PhotoReader2?newsId=${newsVO.getNewsId()}" alt="目前無消息圖片" width="200" height="150">
+            <img src="${pageContext.request.contextPath}/news/controller/PhotoReader2?newsId=${newsVO.getNewsId()}" alt="目前無消息圖片" width="200" height="150">
             <%-- 提供上傳新圖片的欄位 --%>
             <input type="file" class="form-control" id="newsImg" name="newsImg"> 
       			</div>

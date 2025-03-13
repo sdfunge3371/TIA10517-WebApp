@@ -2,9 +2,9 @@
 
 
 
-<%@ page import="news.NewsService"%>
+<%@ page import="news.model.NewsService"%>
 
-<%@ page import="news.NewsVO"%>
+<%@ page import="news.model.NewsVO"%>
 
 <%@ page import="java.util.List"%>
 
@@ -469,7 +469,7 @@ List<NewsStatusVO> statusList = newsStatusSvc.getAll();
 
 									<td>
 
-										<img src="${pageContext.request.contextPath}/PhotoReader2?newsId=<%=news.getNewsId()%>"
+										<img src="${pageContext.request.contextPath}/news/controller/PhotoReader2?newsId=<%=news.getNewsId()%>"
 											alt="圖片" width="200" height="150">
 
 									</td>

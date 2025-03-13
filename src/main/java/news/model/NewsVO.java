@@ -14,7 +14,7 @@ public class NewsVO implements java.io.Serializable{
 	private Timestamp newsEndDate;
 	private Timestamp createdTime;
 	private Integer newsStatusId;
-	private String newsImg;
+	private byte[] newsImg;
 	
 	
 	public String getNewsId() {
@@ -72,13 +72,12 @@ public class NewsVO implements java.io.Serializable{
 	public void setNewsStatusId(Integer newsStatusId) {
 		this.newsStatusId = newsStatusId;
 	}
-	public String getNewsImg() {
+	public byte[] getNewsImg() {
 		return newsImg;
 	}
-	public void setNewsImg(String newsImg) {
+	public void setNewsImg(byte[] newsImg) {
 		this.newsImg = newsImg;
 	}
-	
 	
 	
 	

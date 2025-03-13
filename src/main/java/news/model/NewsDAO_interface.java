@@ -13,4 +13,8 @@ public interface NewsDAO_interface {
      
      public String getNextNewsId() throws SQLException;
      
+     // 新增的方法
+     public List<NewsVO> getNewsByPage(String title, Integer categoryId, Integer statusId, int page, int recordsPerPage);
+     public int getNewsCount(String title, Integer categoryId, Integer statusId);
+     
 }
