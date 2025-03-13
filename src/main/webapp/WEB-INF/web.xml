@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+	id="WebApp_ID" version="6.0">
+	<display-name>TIA105G3</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+	
+	<resource-ref>
+		<description>DB Connection</description>
+		<res-ref-name>jdbc/TestDB2</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+
+
+	
+	
+	<servlet>
+    <servlet-name>NewsServlet</servlet-name>
+    <servlet-class>news.NewsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    <servlet-name>NewsServlet</servlet-name>
+    <url-pattern>/news/uploadNewsServlet.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    <servlet-name>NewsServlet_img</servlet-name>
+    <servlet-class>news.NewsServlet_img</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    <servlet-name>NewsServlet_img</servlet-name>
+    <url-pattern>/news/uploadNewsServlet2.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    <servlet-name>PhotoReader</servlet-name>
+    <servlet-class>news.PhotoReader</servlet-class>
+	</servlet>
+	<servlet-mapping>
+    <servlet-name>PhotoReader</servlet-name>
+    <url-pattern>/news/PhotoReader2</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
